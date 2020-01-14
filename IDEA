@@ -1,0 +1,13 @@
+Problem: Dependency conflicts and situations where dependencies in the kali repo 
+         overwrite system packages
+
+Proposed solution: When installing packages from local .deb files on the hard disk
+                   all dependencies are taken from existing repositories which 
+                   shouldn't break anyones system. However dependencies which
+                   reside only in the kali repos shall be downloaded and installed
+                   first.
+                   So the new program downloads the .deb files directly from the
+                   repo-servers and installs them locally.
+                   
+Servers: https://http.kali.org/kali/
+         https://download.parrot.sh/
