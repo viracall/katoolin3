@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail;
 
+export LC_ALL=C;
+
 get_arch(){
     if [[ "$(getconf LONG_BIT)" -eq 64 ]];
     then
@@ -28,11 +30,7 @@ mkdir -p deb;
 cd deb;
 rm -f *.deb;
 apt-get -d -m download $package;
-
-for pkg in *.deb;
-do
-    sudo gdebi -n "$pkg" || true;
-done
+uninstall_kali_repos;
 
 cd ..;
-uninstall_kali_repos;
+

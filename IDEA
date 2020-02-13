@@ -11,3 +11,10 @@ Proposed solution: When installing packages from local .deb files on the hard di
                    
 Servers: https://http.kali.org/kali/
          https://download.parrot.sh/
+         
+-----
+
+1) Download the .deb version of a package via `apt-get download`
+2) Check all dependencies which reside only in a kali-repo
+3) Download those too as .deb files
+4) Install everything
